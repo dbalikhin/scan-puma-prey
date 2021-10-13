@@ -56,7 +56,7 @@ namespace Puma.Prey.Rabbit.EF
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             base.OnConfiguring(builder);
-            if (builder.Options.Extensions.FirstOrDefault(e => e is Microsoft.EntityFrameworkCore.Infrastructure.Internal.SqliteOptionsExtension) == null)
+            if (builder.Options.Extensions.FirstOrDefault(e => e is Microsoft.EntityFrameworkCore.Sqlite.Infrastructure.Internal.SqliteOptionsExtension) == null)
                 SqliteDbContextOptionsBuilderExtensions.UseSqlite(builder, "DataSource=Rabbit.db", null);
         }
 

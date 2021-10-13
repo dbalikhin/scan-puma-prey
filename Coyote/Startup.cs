@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
-using AutoMapper;
-
 using Puma.Prey.Rabbit.EF;
-using Puma.Prey.Rabbit.Models;
 using Coyote.Data;
-using Coyote.Models;
 using Coyote.Services;
 
 namespace Coyote
@@ -56,7 +46,7 @@ namespace Coyote
 
             services.AddMvc();
 
-            services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
